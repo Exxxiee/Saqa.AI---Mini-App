@@ -34,6 +34,7 @@ function applyTheme(theme) {
     const darkUpload2 = document.getElementById('dark-upload-2');
     const darkUpload3 = document.getElementById('dark-upload-3');
     const darkUpload4 = document.getElementById('dark-upload-4');
+    const darkUpload5 = document.getElementById('dark-upload-5');
     const darkProfil = document.getElementById('dark-profil');
     
     if (theme === 'dark') {
@@ -237,6 +238,14 @@ function applyTheme(theme) {
             document.head.appendChild(link);
         }
 
+        if (!darkUpload5 && document.querySelector('link[href="/css/upload-5.css"]')) {
+            const link = document.createElement('link');
+            link.id = 'dark-upload-5';
+            link.rel = 'stylesheet';
+            link.href = '/css/dark-theme/dark-upload-5.css';
+            document.head.appendChild(link);
+        }
+
         if (!darkProfil && document.querySelector('link[href="/css/profil.css"]')) {
             const link = document.createElement('link');
             link.id = 'dark-profil';
@@ -271,6 +280,7 @@ function applyTheme(theme) {
         if (darkUpload2) darkUpload2.remove();
         if (darkUpload3) darkUpload3.remove();
         if (darkUpload4) darkUpload4.remove();
+        if (darkUpload5) darkUpload5.remove();
         if (darkProfil) darkProfil.remove();
     }
 }

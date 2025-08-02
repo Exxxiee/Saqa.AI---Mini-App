@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tempCtx.drawImage(canvas, 0, 0);
         
         const link = document.createElement('a');
-        link.download = `drawing-${new Date().getTime()}.png`;
+        // link.download = `drawing-${new Date().getTime()}.png`;
         link.href = tempCanvas.toDataURL('image/png');
         link.click();
     }

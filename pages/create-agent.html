@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <title>Saqa.AI - Создание агента</title>
 </head>
 <body>
@@ -46,5 +47,22 @@
     </div>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/animation.js"></script>
+    <script src="/js/webapp.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const createBtn = document.querySelector(".create-agent");
+        const changeBtn = document.querySelector(".change-agent");
+
+        createBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        send("create_agent");
+        });
+
+        changeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        send("change_agent");
+        });
+    });
+    </script>
 </body>
 </html>

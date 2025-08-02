@@ -1,3 +1,26 @@
+const filterMap = {
+    btn1:  'filter_female_sakha',
+    btn11: 'filter_male_sakha',
+    btn2:  'filter_billionaire',
+    btn12: 'filter_billionaire',
+    btn3:  'filter_beach',
+    btn13: 'filter_beach',
+    btn4:  'filter_photoshoot',
+    btn14: 'filter_photoshoot',
+    btn5:  'filter_portrait',
+    btn15: 'filter_portrait',
+    btn6:  'filter_child',
+    btn16: 'filter_child',
+    btn7:  'filter_nature_spirit',
+    btn17: 'filter_nature_spirit',
+    btn8:  'filter_ufc',
+    btn18: 'filter_ufc',
+    btn9:  'filter_retro',
+    btn19: 'filter_retro',
+    btn10: 'filter_other_gender',
+    btn20: 'filter_other_gender',
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     const buttonsConfig = {
         'btn1': {
@@ -362,11 +385,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (generateBtnClickHandler) {
                             generateBtn.removeEventListener('click', generateBtnClickHandler);
                         }
-                        
+                        // <script src="/js/webapp.js"></script>
+
+                        // generateBtnClickHandler = function(e) {
+                        //     e.preventDefault();
+                        //     e.stopPropagation();
+                        //     // handleGenerateClick(btnId);
+                            
+                        // };
                         generateBtnClickHandler = function(e) {
                             e.preventDefault();
                             e.stopPropagation();
-                            handleGenerateClick(btnId);
+
+                            const filterKey = filterMap[btnId];
+                            if (filterKey) {
+                                send(filterKey);
+                            }
+                            console.log(`Filter ${filterKey} sent`);
                         };
                         
                         generateBtn.addEventListener('click', generateBtnClickHandler);

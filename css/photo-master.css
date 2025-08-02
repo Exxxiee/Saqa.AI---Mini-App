@@ -39,6 +39,10 @@ main {
 .settings-back-btn {
     width: 30px;
     height: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
     background: #F3F5F6;
     display: flex;    
     align-items: center;   
@@ -49,6 +53,8 @@ main {
     cursor: pointer;     
     transition: 300ms;
     margin-right: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .settings-back-icon {
@@ -95,15 +101,18 @@ main {
 .card {
     position: relative;
     margin-top: 20px;
+    width: 360px;
+    max-width: 490px;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 2px solid #7698BB26;
 }
 
-.card img, 
+.card img,
 .card canvas {
-    width: 360px;
-    height: 490px;
-    border-radius: 22px;
-    border: 2px solid #7698BB26;
-    object-fit: cover;
+    width: 100%;
+    height: auto; 
+    display: block;
 }
 
 .card canvas {
